@@ -1,0 +1,7 @@
+# allow google to index site
+User-agent: Googlebot
+Allow: /
+
+# disallow all other webscrappers
+User-agent: *
+Disallow: /

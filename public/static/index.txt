@@ -1,0 +1,106 @@
+\e[0;35m
+
+    ███████ ██   ██ ██ ███    ██ ██    ██    
+    ██      ██   ██ ██ ████   ██  ██  ██     
+    ███████ ███████ ██ ██ ██  ██   ████      
+         ██ ██   ██ ██ ██  ██ ██    ██       
+    ███████ ██   ██ ██ ██   ████    ██       
+    ███████  ██████   ██████ ██   ██ ███████ 
+    ██      ██    ██ ██      ██  ██  ██      
+    ███████ ██    ██ ██      █████   ███████ 
+         ██ ██    ██ ██      ██  ██       ██ 
+    ███████  ██████   ██████ ██   ██ ███████ 
+
+
+\e[1;32m    hey, i'm shinysocks \e[1;0m
+\e[1;90m    welcome from cURL! \e[0;0m
+
+\e[1;37m    [about me]  \e[0;0m
+
+        hello, my name is Noah Dinan and I recently graduated from Ronald
+        Reagan College Prep High School with valedictorian honors.
+        i am an alumni of FIRST Robotics Team 1675.
+        i currently attend MSOE for software engineering.
+
+        i love cats, computer programming, singing, cycling, and gaming on linux! 
+        recent games: magic: the gathering arena, barotrauma, starbound, and coffee talk
+
+        currently daily-driving debian on a system76 lemur laptop
+        i've been programming in the helix modal editor
+
+\e[1;37m    [urls]
+\e[0;34m
+        https://shinysocks.net/s/noah.png
+        https://github.com/shinysocks
+        https://shinysocks.net/s/resume.pdf
+        https://linkedin.com/in/noah-dinan
+        https://shinysocks.itch.io
+        https://steamcommunity.com/profiles/76561199074928968
+        mailto: noah at shinysocks.net
+
+\e[1;37m    [skills & interests]  \e[0;0m
+
+        javascript, java, bash,
+        python, c#, unity, rust
+
+        linux, docker, git,
+        gitlab cicd, agile
+
+\e[1;37m    [api]
+
+\e[1;32m        GET /t/:query \e[0;0m     -> get a shuffled tune which matches query
+\e[1;32m        GET /recentsongs \e[0;0m  -> get fifteen most recently added songs
+\e[1;32m        GET /meme \e[0;0m         -> get a meme
+\e[1;31m        PUT /upload \e[0;0m       -> upload a file
+\e[1;32m        GET /s/:file \e[0;0m      -> get a shared file
+
+\e[1;37m    [usage]
+
+\e[1;90m        echo -e "$(curl https://shinysocks.net)" \e[0;0m         -> view with color support
+\e[1;90m        curl https://shinysocks.net/t/hozier -o song.mp3 \e[0;0m -> download a song by hozier
+\e[1;90m        curl https://shinysocks.net/upload -T image.png \e[0;0m  -> upload an image file
+\e[1;90m        curl https://shinysocks.net/s/y36sgD.txt | cat \e[0;0m   -> access an uploaded file
+
+\e[1;37m    [projects]
+\e[0;0m    note: all code can be found on my github.
+
+\e[1;33m      modulartelebot\e[1;37m (spring 2024)\e[0;0m
+      created an extensible telegram bot using java object
+      oriented principles with my friend Michael Shalewski [@jagernet-ops].
+
+\e[1;33m      maths ia\e[1;37m (winter 2024)\e[0;0m
+      explored modeling the theoretical and experimental
+      time complexity for the bubble sort algorithm.
+\e[0;34m      https://shinysocks.net/s/maths.pdf \e[0;0m
+
+\e[1;33m      cliradio\e[1;37m (winter 2024)\e[0;0m
+      wrote a commandline audio streaming program which allows users to stream 
+      audio from either a microphone or internally (with pipewire) over a LAN.
+
+\e[1;33m      ticktacktoe\e[1;37m (fall 2023)\e[0;0m
+      practiced using java's swing gui framework, and
+      created a version of tic-tac-toe with claymation.
+
+\e[1;33m      couriercat\e[1;37m (summer & fall 2024)\e[0;0m
+      couriercat is my second collaborative game project. This simple
+      exploration game was built in the unity game engine for android and WebGL targets.
+\e[0;34m      https://shinysocks.itch.io/couriercat \e[0;0m
+
+\e[1;33m      oozing\e[1;37m (summer 2022)\e[0;0m
+      OOZING is an odd little game where you play as a cat with a cannon.
+      built with unity / C# and a group of friends.
+\e[0;34m      https://shinysocks.itch.io/oozing \e[0;0m
+
+\e[1;33m      chatGPT-discord-bot\e[1;37m (spring 2022)\e[0;0m
+      i was interested in creating a discord bot that allowed a user to interact with
+      chatgpt's various "jailbreaks". I decided to fork [@Zero6992]'s
+      chatGPT-discord-bot and add "personas" as well as image generation.
+\e[0;34m      https://github.com/Zero6992/chatGPT-discord-bot \e[0;0m
+    
+\e[1;33m      raccoonundrum\e[1;37m (fall 2021)\e[0;0m
+      written in Python with the pygame library, raccoonundrum
+      was one of my first large coding projects
+
+    shinysocks.net is hosted on a raspberry pi zero 2 w using express.js
+    dGUgcXVpZXJv
+\e[1;32m    EOF \e[0;0m
