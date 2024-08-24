@@ -25,7 +25,7 @@ export const refreshTunes = () => {
     TUNES.push(TUNES.at(i))
   }
 
-  log.info('refreshed tunes')
+  return TUNES.length
 }
 
 export const shuffle = (query) => {

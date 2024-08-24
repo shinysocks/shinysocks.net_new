@@ -23,14 +23,14 @@ const __dirname = path.resolve()
 export const TUNES_PATH = path.join(__dirname, 'public', 'tunes', '/')
 export const MEMES_PATH = path.join(__dirname, 'public', 'memes', '/')
 
-const SHARE_URL = "http://localhost:8888/s/"
+const SHARE_URL = "https://shinysocks.net/s/"
 const suid = new ShortUniqueId({ length: 6 })
 
 const app = express()
 const port = 8888
 
-refreshTunes()
-refreshMemes()
+log.info(`found ${refreshTunes()} tunes 🎶`)
+log.info(`found ${refreshMemes()} memes 🤪`)
 
 // refresh tunes every 5 minutes
 setInterval(refreshTunes, 1000 * 60 * 5)
@@ -43,13 +43,19 @@ app.get('/', (req, res) => {
   const userAgent = req.headers['user-agent']
   if (userAgent.includes('curl')) {
     res.status(200).sendFile(path.join(__dirname, 'public', 'static', 'index.txt'))
+    log.info("terminal query! 🐚")
   } else {
     res.status(200).sendFile(path.join(__dirname, 'public', 'static', 'index.html'))
   }
 })
 
+app.get('/sh', (req, res) => {
+  res.send('echo -e "$(curl https://shinysocks.net --silent)" | less --raw-control-chars')
+})
+
 app.get('/robots.txt', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'static', 'robots.txt'))
+  log.info("bot found! 🤖")
 })
 
 app.get('/t/:query?', (req, res, next) => {
@@ -110,7 +116,7 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-  log.info(`shinysocks.net started on port ${port}.`)
+  log.info(`shinysocks.net started on port ${port}! 🚀`)
 })
 
 // app.get('/textme/:message', (req, res) => {
