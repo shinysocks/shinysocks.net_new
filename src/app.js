@@ -40,20 +40,25 @@ app.use('/s', express.static(path.join(__dirname, 'public', 'share')))
 
 app.get('/', (req, res) => {
   // shinysocks.net homepage route
-  const userAgent = req.headers['user-agent']
-  if (userAgent.includes('curl')) {
-    res.status(200).sendFile(path.join(__dirname, 'public', 'static', 'index.txt'))
-    log.info("terminal query! 🐚")
-  } else {
+  try {
+    const userAgent = req.headers['user-agent']
+    if (userAgent.includes('curl')) {
+      res.status(200).sendFile(path.join(__dirname, 'public', 'static', 'index.txt'))
+      log.info("terminal query! 🐚")
+    } else {
+      res.status(200).sendFile(path.join(__dirname, 'public', 'static', 'index.html'))
+    }
+  } catch (err) {
     res.status(200).sendFile(path.join(__dirname, 'public', 'static', 'index.html'))
+    log.error("probably no user agent", err)
   }
 })
 
-app.get('/sh', (req, res) => {
+app.get('/sh', (_req, res) => {
   res.send('echo -e "$(curl https://shinysocks.net --silent)" | less --raw-control-chars')
 })
 
-app.get('/robots.txt', (req, res) => {
+app.get('/robots.txt', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'static', 'robots.txt'))
   log.info("bot found! 🤖")
 })
@@ -69,14 +74,14 @@ app.get('/t/:query?', (req, res, next) => {
   }
 })
 
-app.get('/recentsongs', (req, res) => {
+app.get('/recentsongs', (_req, res) => {
   // grabs recent songs
   res.send(recentSongs())
 })
 
-app.get('/meme', (req, res) => {
+app.get('/meme', (_req, res) => {
   // grab random meme
-  let meme = getMeme()
+  const meme = getMeme()
   res.setHeader('meme', meme)
   res.sendFile(path.join(MEMES_PATH, meme))
 })
@@ -86,7 +91,7 @@ app.put('/upload', (req, res) => {
   const filename = suid.rnd()
   let ext = ""
   const filepath = path.join(__dirname, 'public', 'share', filename)
-  let stream = fs.createWriteStream(filepath)
+  const stream = fs.createWriteStream(filepath)
 
   req.pipe(stream).on('finish', () => {
     fileTypeFromFile(filepath).then((result) => {
@@ -108,10 +113,15 @@ app.put('/upload', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  if (req.headers['user-agent'].includes('curl')) {
+  log.warn(`client attempted: ${req.originalUrl}`)
+  try {
+    if (req.headers['user-agent'].includes('curl')) {
+      res.status(404).send("not found")
+    } else {
+      res.status(404).sendFile(path.join(__dirname, 'public', 'static', '404.html'))
+    }
+  } catch(_err) {
     res.status(404).send("not found")
-  } else {
-    res.status(404).sendFile(path.join(__dirname, 'public', 'static', '404.html'))
   }
 })
 

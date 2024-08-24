@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { TUNES_PATH, log } from './app.js'
+import { TUNES_PATH } from './app.js'
 
 const RECENT_CUTOFF = 275
 let TUNES = []
