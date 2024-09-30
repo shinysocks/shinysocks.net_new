@@ -1,5 +1,5 @@
 import cors from 'cors'
-import fs from 'fs'
+import fs from "fs"
 import express from 'express'
 import { refreshTunes, shuffle, recentSongs, } from './music.js'
 import { getMeme, refreshMemes } from './meme.js'
@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/sh', (_req, res) => {
-  res.send('echo -e "$(curl https://shinysocks.net --silent)" | less --raw-control-chars')
+  res.send('echo -e "$(curl https://shinysocks.net --silent)" | less --raw-control-chars #TODO: music??')
 })
 
 app.get('/robots.txt', (_req, res) => {
