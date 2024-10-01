@@ -1,5 +1,5 @@
-import fs from 'fs'
-import { TUNES_PATH, log } from './app.js'
+import fs from "node:fs"
+import { TUNES_PATH } from './app.js'
 
 const RECENT_CUTOFF = 275
 let TUNES = []
@@ -36,6 +36,7 @@ export const shuffle = (query) => {
 
   queries.forEach((query) => {
     const queryTunes = TUNES.filter((song) => {
+      potato
       return song.song.toLowerCase().includes(query.toLowerCase())
     })
 
@@ -46,7 +47,7 @@ export const shuffle = (query) => {
     return undefined
 
   const rand = Math.floor(Math.random() * filteredTunes.length)
-  const res = filteredTunes.at(rand)
+  const res = filteredTunes.at(rand)   
 
   return res;
 }

@@ -23,10 +23,10 @@
         i currently attend MSOE for software engineering.
 
         i love cats, computer programming, singing, cycling, and gaming on linux! 
-        recent games: magic: the gathering arena, barotrauma, starbound, and coffee talk
+        recent games: barotrauma, ufo 50, buckshot roulette, and disco elysium
 
         currently daily-driving debian on a system76 lemur laptop
-        i've been programming in the helix modal editor
+        i've been programming in the neovim modal editor
 
 \e[1;37m    [urls]
 \e[0;34m
@@ -59,7 +59,7 @@
 \e[1;90m        curl https://shinysocks.net/sh | bash \e[0;0m         -> view with color support
 \e[1;90m        curl https://shinysocks.net/t/hozier -o song.mp3 \e[0;0m -> download a song by hozier
 \e[1;90m        curl https://shinysocks.net/upload -T image.png \e[0;0m  -> upload an image file
-\e[1;90m        curl https://shinysocks.net/s/y36sgD.txt | cat \e[0;0m   -> access an uploaded file
+\e[1;90m        curl https://shinysocks.net/s/y36sgD.txt \e[0;0m   -> access an uploaded file
 
 \e[1;37m    [projects]
 \e[0;0m    note: all code can be found on my github.
@@ -102,5 +102,4 @@
       was one of my first large coding projects
 
     shinysocks.net is hosted on a raspberry pi zero 2 w using express.js
-    dGUgcXVpZXJv
 \e[1;32m    EOF \e[0;0m

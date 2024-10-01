@@ -1,0 +1,18 @@
+{
+  "imports": {
+    "express": "npm:express",
+    "compression": "npm:compression",
+    "cors": "npm:cors",
+    "file-type": "npm:file-type",
+    "path": "npm:path",
+    "pino": "npm:pino",
+    "pino-pretty": "npm:pino-pretty",
+    "short-unique-id": "npm:short-unique-id"
+  },
+
+  "tasks": {
+    "start": "deno run -A --watch src/app.js",
+    "release": "deno run -A src/app.js"
+  }
+}
+

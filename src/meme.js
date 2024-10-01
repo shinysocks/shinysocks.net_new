@@ -1,5 +1,5 @@
-import fs from 'fs'
-import { MEMES_PATH, log } from './app.js'
+import fs from 'node:fs'
+import { MEMES_PATH } from './app.js'
 
 const MEMES = []
 
