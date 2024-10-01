@@ -111,9 +111,9 @@ app.put('/upload', (req, res) => {
 })
 
 app.get('*', (req, res) => {
+  log.warn(`client attempted: ${req.originalUrl}`)
   try {
     if (req.headers['user-agent'].includes('curl')) {
-      console.log(req)
       res.status(404).send("not found")
     } else {
       res.status(404).sendFile(path.join(__dirname, 'public', 'static', '404.html'))
@@ -127,20 +127,4 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   log.info(`shinysocks.net started on port ${port}! 🚀`)
 })
-
-// app.get('/textme/:message', (req, res) => {
-//   if (req.params.message) {
-//     subProcess.exec(`./textme "${req.params.message}"`, (err, stdout, stderr) => {
-//       if (err) {
-//         log.error(`textme script failed with: ${err}`)
-//         process.exit(1)
-//         res.sendStatus(500)
-//       } else {
-//         res.send(stdout.toString())
-//       }
-//     })
-//   } else {
-//     res.status(400).send("no message body")
-//   }
-// })
 
