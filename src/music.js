@@ -36,7 +36,6 @@ export const shuffle = (query) => {
 
   queries.forEach((query) => {
     const queryTunes = TUNES.filter((song) => {
-      potato
       return song.song.toLowerCase().includes(query.toLowerCase())
     })
 
